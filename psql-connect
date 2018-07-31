@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh yay161 -t "psql service=$@"

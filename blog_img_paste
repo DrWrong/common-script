@@ -1,0 +1,8 @@
+#!/bin/bash
+
+filename="$(date '+%F-%T').png"
+
+echo "/usr/local/bin/pngpaste /tmp/$filename" |nc localhost 2222
+echo "cat /tmp/$filename"|nc localhost 2222 > "$HOME/drwrong.github.io/static_images/static/$filename"
+echo "rm /tmp/$filename"|nc localhost 2222
+echo "static_images/static/$filename"

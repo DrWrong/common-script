@@ -1,0 +1,4 @@
+#!/bin/bash
+# nc localhost 2225
+# ssh local pbpaste
+echo 'pbpaste'|nc localhost 2222

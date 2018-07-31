@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# cat | nc  localhost 2224
+
+pipe="/tmp/pbcopypipe"
+
+trap "rm -f $pipe" EXIT
+
+if [[ ! -p $pipe ]]; then
+    mkfifo $pipe
+fi
+
+nc localhost 2222 < $pipe &
+echo "pbcopy" > $pipe
+cat >> $pipe

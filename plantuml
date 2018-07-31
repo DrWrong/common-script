@@ -1,0 +1,3 @@
+#!/bin/bash
+
+java -jar /home/drwrong/bin/plantuml.jar $@
